@@ -28,7 +28,7 @@ class CurrencyConverter extends StatelessWidget {
                   color: Color.fromARGB(255, 15, 11, 11),
                 ),
                 decoration: InputDecoration(
-                  labelText: 'please enter the amoadasdunt in usd ',
+                  labelText: 'please enter the amount in usd ',
                   hintStyle: TextStyle(
                     color: Color.fromARGB(255, 170, 170, 20),
                   ),
