@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -7,65 +9,89 @@ class CurrencyConverter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.green,
+    final border = OutlineInputBorder(
+      borderSide: const BorderSide(
+        width :2.0,
+        style :BorderStyle.solid,
+
+      ),
+       borderRadius: BorderRadius.circular(20),
+    );
+
+
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title:const  Text('Currency Converter',
+        style: TextStyle(color: Colors.grey),) ,
+        centerTitle: true,
+      ) ,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              '54543',
+            const Text(
+              '0',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 203, 193, 193),
+                color: Colors.white,
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: TextField(
-                style: TextStyle(
-                  color: Color.fromARGB(255, 15, 11, 11),
+                style: const TextStyle(
+                  color: Colors.black,
                 ),
                 decoration: InputDecoration(
-                  labelText: 'please enter the amount in usd ',
-                  hintStyle: TextStyle(
-                    color: Color.fromARGB(255, 170, 170, 20),
+                  labelText: 'please enter the amount  in usd ',
+                  hintStyle: const TextStyle(
+                    color: Colors.black,
                   ),
-                  prefixIcon: Icon(Icons.monetization_on_outlined),
-                  prefixIconColor: Color.fromARGB(255, 11, 11, 10),
+                  
+                  prefixIcon: const Icon(Icons.monetization_on_outlined),
+                  prefixIconColor: Colors.black,
+                  filled: true, //impstep
                   fillColor: Colors.white,
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color.fromARGB(255, 197, 143, 143),
-                      width: 2.0,
+                    borderSide: const BorderSide(
+                      color: Colors.black,
+                      width: 10.0,
                       style: BorderStyle.none,
                       strokeAlign: BorderSide.strokeAlignOutside,
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(40)),
+                    borderRadius: BorderRadius.circular(10),
+                    
                   ),
+                  
                 ),
-                keyboardType: TextInputType.numberWithOptions(
+                keyboardType: const TextInputType.numberWithOptions(
                   decimal: true,
                 ),
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.all(10.0),
-            //   child: TextButton(
-            //     onPressed: () {
-            //       print('button clicked');
-            //     },
-            //     style: ButtonStyle(
-            //       backgroundColor: MaterialStatePropertyAll(Colors.white),
-            //       foregroundColor:
-            //           MaterialStatePropertyAll(Color.fromARGB(239, 10, 7, 5)),
-            //       fixedSize:
-            //           MaterialStatePropertyAll(Size(double.infinity, 50)),
-            //     ),
-            //     child: Text('convert'),
-            //   ),
-            // ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextButton (
+                onPressed: () {
+                  print('button clicked');
+                },
+                style:ElevatedButton.styleFrom(
+                  backgroundColor:Colors.white,
+                  foregroundColor:Colors.black,
+                  fixedSize: const Size(400, 50),
+                      
+                      shape:RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      )
+                      
+                    ),
+                    child: const Text('convert'),
+               )
+    
+            )
           ],
         ),
       ),
